@@ -25,6 +25,14 @@
 
 To start the development server run `nx serve frontend`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
+Run all services:
+```
+nx run-many --parallel --target=serve --projects=agw,frontend
+```
+<a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
+Deploy on SCOS
+</a>
+
 
 ## Структура репозитория
 Репозиторий содержит следующие основные каталоги и файлы:
