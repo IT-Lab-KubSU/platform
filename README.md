@@ -41,6 +41,13 @@ Deploy on SCOS
 - `tools` - Nx workspaces tools
 - `docs` - документация
 
+```mermaid
+graph TD;
+    agw-e2w-->agw;
+    frontend-e2e-->frontend;
+    frontend-->agw;
+```
+
 ## Generate code
 
 If you happen to use Nx plugins, you can leverage code generators that might come with it.
