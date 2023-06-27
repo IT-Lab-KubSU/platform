@@ -19,6 +19,7 @@
 
 ## Сервисы
 - [frontend (ReactJS)](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/frontend)
+- [AGW](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/agw)
 <!-- todo: интегрировать SC Omni Services Embeding c списком всех компонентов -->
 
 ## Развертывание
