@@ -25,6 +25,14 @@
 
 To start the development server run `nx serve frontend`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
+Run all services:
+```
+nx run-many --parallel --target=serve --projects=agw,frontend
+```
+<a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
+Deploy on SCOS
+</a>
+
 
 ## Структура репозитория
 Репозиторий содержит следующие основные каталоги и файлы:
@@ -32,6 +40,13 @@ To start the development server run `nx serve frontend`. Open your browser and n
 - `libs` - библиотеки
 - `tools` - Nx workspaces tools
 - `docs` - документация
+
+```mermaid
+graph TD;
+    agw-e2w-->agw;
+    frontend-e2e-->frontend;
+    frontend-->agw;
+```
 
 ## Generate code
 
@@ -70,3 +85,19 @@ Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provid
 ## Ready to deploy?
 
 Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
+
+# Стиль кода
+## Коммиты
+Используемые префиксы:
+- **feat:** (от "feature") - новая функциональность или добавление нового компонента.
+- **fix:** - исправление ошибок или дефектов.
+- **docs:** - изменения, связанные с документацией, например, обновление README или документации в коде.
+- **style:** - изменения внешнего вида кода, форматирование, пробелы, отступы и т.д., которые не влияют на его поведение.
+- **refactor:** - рефакторинг кода без исправления ошибок или добавления новых функций.
+- **test:** - добавление или исправление тестов.
+- **chore:** - изменения в сборочных скриптах, настройках инструментов, обновление зависимостей и т.д.
+- **perf:** - изменения, связанные с оптимизацией производительности.
+- **revert:** - отмена предыдущего коммита.
+- **merge:** - коммит, созданный при слиянии веток.
+- **release:** - коммит, связанный с выпуском новой версии.
+- **require:** - коммит, связанный с установкой новой библиотеки
