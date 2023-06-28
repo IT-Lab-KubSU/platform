@@ -20,6 +20,7 @@
 ## Сервисы
 - [frontend (ReactJS)](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/frontend)
 - [AGW](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/agw)
+- [User Data Service](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/user-data)
 <!-- todo: интегрировать SC Omni Services Embeding c списком всех компонентов -->
 
 ## Развертывание
@@ -47,6 +48,9 @@ graph TD;
     agw-e2w-->agw;
     frontend-e2e-->frontend;
     frontend-->agw;
+    agw-->user-data;
+    user-data-->user-data-db;
+    user-data-db-->user-data-pg-admin;
 ```
 
 ## Generate code
