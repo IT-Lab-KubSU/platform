@@ -52,7 +52,7 @@ graph TD;
     ods-e2e-->ods
     agw-->kafka-log
     kafka-log-->ods
-    kafka-->zookeeper
+    kafka-log-->zookeeper
 ```
 
 ## Generate code
