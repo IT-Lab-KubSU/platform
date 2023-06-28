@@ -29,7 +29,7 @@ To start the development server run `nx serve frontend`. Open your browser and n
 
 Run all services:
 ```
-nx run-many --parallel --target=serve --projects=agw,frontend
+nx run-many --parallel --target=serve --projects=agw,user-data,frontend
 ```
 <a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
 Deploy on SCOS
