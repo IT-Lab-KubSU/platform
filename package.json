@@ -15,6 +15,7 @@
     "@swc/helpers": "~0.5.0",
     "axios": "^1.0.0",
     "graphql": "^16.7.1",
+    "nestjs-kafka": "^1.0.6",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "reflect-metadata": "^0.1.13",
