@@ -1,16 +1,19 @@
 version: '3'
 services:
-  zookeeper:
-    image: confluentinc/cp-zookeeper:6.2.0
+  zookeeper-log:
+    image: confluentinc/cp-zookeeper:latest
     container_name: zookeeper
     ports:
       - "2181:2181"
     environment:
       - ZOOKEEPER_CLIENT_PORT=2181
       - ZOOKEEPER_TICK_TIME=2000
+    networks:
+      - dev-panels
+      - kafka-log
 
-  kafka:
-    image: confluentinc/cp-kafka:6.2.0
+  kafka-log:
+    image: confluentinc/cp-kafka:latest
     container_name: kafka
     ports:
       - "9092:9092"
@@ -19,6 +22,26 @@ services:
       - KAFKA_LISTENERS=PLAINTEXT://:9092
       - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://localhost:9092
       - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
-      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper-log:2181
     depends_on:
-      - zookeeper
+      - zookeeper-log
+    networks:
+      - kafka-log
+
+  kafka-log-manager:
+    image: hlebalbau/kafka-manager:latest
+    container_name: kafka-manager
+    ports:
+      - "9000:9000"
+    environment:
+      - ZK_HOSTS=zookeeper:2181
+    depends_on:
+      - zookeeper-log
+    networks:
+      - kafka-log
+
+networks:
+  dev-panels:
+    driver: bridge
+  kafka-log:
+    driver: bridge
