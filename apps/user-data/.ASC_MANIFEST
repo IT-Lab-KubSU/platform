@@ -1,0 +1,13 @@
+$$
+@version: 0.1.0;
+@scuuid: 27895030-15ec-11ee-be56-0242ac120002;
+@type: service;
+@platform: nestjs;
+@license: BSD-3-Clause;
+@owner: artem-darius weber;
+@author: ;
+@title: user-data;
+@desc: ;
+@rp: kubsu it lab;
+@vr: 7093;
+$$
