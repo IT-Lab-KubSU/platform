@@ -29,6 +29,7 @@ To start the development server run `nx serve frontend`. Open your browser and n
 
 Run all services:
 ```
+sudo docker-compose up -d
 nx run-many --parallel --target=serve --projects=agw,ods,frontend
 ```
 <a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
@@ -49,6 +50,9 @@ graph TD;
     frontend-e2e-->frontend;
     frontend-->agw;
     ods-e2e-->ods
+    agw-->kafka-log
+    kafka-log-->ods
+    kafka-->zookeeper
 ```
 
 ## Generate code
