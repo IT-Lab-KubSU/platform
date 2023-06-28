@@ -53,6 +53,7 @@ graph TD;
     agw-->kafka-log
     kafka-log-->ods
     kafka-log-->zookeeper
+    kafka-manager-->zookeeper
 ```
 
 ## Generate code
