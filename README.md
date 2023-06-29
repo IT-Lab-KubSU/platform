@@ -52,7 +52,10 @@ graph TD;
     agw-->user-data;
     user-data-->user-data-db;
     user-data-db-->user-data-pg-admin;
-    agw-->auth;
+    agw-->auth-client;
+    auth-client-->auth;
+    auth-->auth-db;
+    auth-db-->auth-db-admin;
 ```
 
 ## Generate code

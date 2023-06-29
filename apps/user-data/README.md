@@ -13,3 +13,11 @@
 ## Ports
 - `8083` - pg Admin
 - `3002` - app
+
+## Structure
+```mermaid
+graph TD;
+    agw-->user-data;
+    user-data-->user-data-db;
+    user-data-db-->user-data-pg-admin;
+```

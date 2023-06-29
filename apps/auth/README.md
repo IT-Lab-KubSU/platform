@@ -10,6 +10,14 @@
   </span>
 </div>
 
+## Structure
+```mermaid
+graph TD;
+    agw-->auth;
+    auth-->auth-db;
+    auth-db-->auth-db-admin;
+```
+
 ## Ports
 - `8082` - pg Admin
 - `3005` - app
