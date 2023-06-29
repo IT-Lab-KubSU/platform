@@ -1,0 +1,36 @@
+version: "3.9"
+
+services:
+  user-authentication-database:
+    image: postgres:latest
+    container_name: user-authentication-database
+    restart: always
+    networks:
+      - user-authentication
+    volumes:
+      - user-authentication-database:/var/lib/postgresql
+    env_file:
+      - ./database.env
+  user-authentication-database-admin:
+    container_name: user-authentication-database-admin
+    image: bitnami/phppgadmin:latest
+    restart: always
+    networks:
+      - user-authentication
+    depends_on:
+      - user-authentication-database
+    environment:
+      - DATABASE_HOST=user-authentication-database
+    ports:
+      - "8083:8080"
+
+networks:
+  user-authentication:
+    name: user-authentication
+    driver: bridge
+
+volumes:
+  user-authentication-database:
+    driver: local
+  user-authentication-tokens:
+    driver: local
