@@ -121,6 +121,12 @@ Have a look at the [Nx Console extensions](https://nx.dev/nx-console). It provid
 
 Just run `nx build demoapp` to build the application. The build artifacts will be stored in the `dist/` directory, ready to be deployed.
 
+# Frontend
+## Create a new Layout
+```bash
+nx g @nx/react:component NAME --project site-layouts
+```
+
 # Стиль кода
 ## Коммиты
 Используемые префиксы:
