@@ -126,6 +126,10 @@ Just run `nx build demoapp` to build the application. The build artifacts will b
 ```bash
 nx g @nx/react:component NAME --project site-layouts
 ```
+## Create a new Page
+```bash
+nx g @nx/react:component NAME --project site-pages
+```
 
 # Стиль кода
 ## Коммиты
