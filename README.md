@@ -73,7 +73,7 @@ Deploy on SCOS
 graph TD;
     agw-e2w-->agw;
     frontend-e2e-->frontend;
-    frontend-->agw;
+    ui-modules-->agw;
     agw-->user-data;
     user-data-->user-data-db;
     user-data-db-->user-data-pg-admin;
@@ -81,6 +81,10 @@ graph TD;
     auth-client-->auth;
     auth-->auth-db;
     auth-db-->auth-db-admin;
+    site-pages-->ui;
+    site-pages-->ui-modules;
+    frontend-->site-pages;
+    site-pages-->site-layouts;
 ```
 
 ## Generate code
