@@ -81,7 +81,7 @@ graph TD;
     auth-client-->auth;
     auth-->auth-db;
     auth-db-->auth-db-admin;
-    site-pages-->ui;
+    ui-modules-->ui;
     site-pages-->ui-modules;
     frontend-->site-pages;
     site-pages-->site-layouts;
