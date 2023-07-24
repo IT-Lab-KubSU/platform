@@ -20,6 +20,8 @@
 ## Сервисы
 - [frontend (ReactJS)](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/frontend)
 - [AGW](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/agw)
+- [User Data Service](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/user-data)
+- [Auth Service](https://github.com/IT-Lab-KubSU/platform/tree/main/apps/auth)
 <!-- todo: интегрировать SC Omni Services Embeding c списком всех компонентов -->
 
 ## Развертывание
@@ -28,7 +30,7 @@ To start the development server run `nx serve frontend`. Open your browser and n
 
 Run all services:
 ```
-nx run-many --parallel --target=serve --projects=agw,frontend
+nx run-many --parallel --target=serve --projects=agw,user-data,auth,frontend
 ```
 <a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
 Deploy on SCOS
@@ -47,6 +49,13 @@ graph TD;
     agw-e2w-->agw;
     frontend-e2e-->frontend;
     frontend-->agw;
+    agw-->user-data;
+    user-data-->user-data-db;
+    user-data-db-->user-data-pg-admin;
+    agw-->auth-client;
+    auth-client-->auth;
+    auth-->auth-db;
+    auth-db-->auth-db-admin;
 ```
 
 ## Generate code
