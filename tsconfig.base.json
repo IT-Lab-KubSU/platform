@@ -15,8 +15,9 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@platform/ui": ["libs/ui/src/index.ts"],
-      "@pconfig": ["config/index.ts"]
+      "@pconfig": ["config/index.ts"],
+      "@platform/prisma-generator": ["libs/prisma-generator/src/index.ts"],
+      "@platform/ui": ["libs/ui/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
