@@ -20,7 +20,8 @@
       "@platform/prisma-generator": ["libs/prisma-generator/src/index.ts"],
       "@platform/site-layouts": ["libs/site-layouts/src/index.ts"],
       "@platform/site-pages": ["libs/site-pages/src/index.ts"],
-      "@platform/ui": ["libs/ui/src/index.ts"]
+      "@platform/ui": ["libs/ui/src/index.ts"],
+      "@platform/ui-modules": ["libs/ui-modules/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]
