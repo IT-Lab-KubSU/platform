@@ -136,6 +136,16 @@ nx g @nx/react:component NAME --project site-layouts
 ```bash
 nx g @nx/react:component NAME --project site-pages
 ```
+## Create a new Component
+Like navbar, footer, login card, delete modal alert and et.
+```bash
+nx g @nx/react:component NAME --project ui-modules
+```
+## Create a new UI Component
+Like nav_link, cta_button, username_input and et.
+```bash
+nx g @nx/react:component NAME --project ui
+```
 
 # Стиль кода
 ## Коммиты
