@@ -1,11 +1,11 @@
 import { BadRequestException, Injectable } from "@nestjs/common";
-import { PrismaService } from "../../Prisma/service/prisma.service";
+import { AuthClient } from "@platform/prisma-clients";
 import { DevicesDto } from "../dto/devices.dto";
 import { PrismaClientValidationError } from "@prisma/client/runtime";
 
 @Injectable()
 export class UserService {
-  constructor(private readonly prisma: PrismaService) {
+  constructor(private readonly prisma: AuthClient) {
   }
 
   public async devices(params: DevicesDto): Promise<{ name?: string, fingerprint?: string, isBlocked?: boolean }[]> {

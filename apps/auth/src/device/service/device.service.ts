@@ -1,11 +1,11 @@
 import { BadRequestException, ConflictException, Injectable } from "@nestjs/common";
-import { PrismaService } from "../../Prisma/service/prisma.service";
 import { UserDto } from "../dto/user.dto";
 import { PrismaClientValidationError } from "@prisma/client/runtime";
+import { AuthClient } from "@platform/prisma-clients";
 
 @Injectable()
 export class DeviceService {
-  constructor(private readonly prisma: PrismaService) {
+  constructor(private readonly prisma: AuthClient) {
   }
 
   public getUserUuidAsPrismaPromise(params: { fingerprint: string }) {

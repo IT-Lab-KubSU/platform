@@ -28,8 +28,33 @@
 
 To start the development server run `nx serve frontend`. Open your browser and navigate to http://localhost:4200/. Happy coding!
 
-Run all services:
+
+```bash
+npm i -g prisma nx
 ```
+
+```bash
+yarn install
+```
+
+```bash
+copy .env.example .env
+```
+
+```bash
+cd apps/auth/serving && copy database.env.example database.env && sudo docker-compose up -d
+```
+
+```bash
+prisma generate --schema="./libs/prisma-clients/auth/prisma/schema.prisma"
+```
+
+```bash
+prisma db push --schema="./libs/prisma-clients/auth/prisma/schema.prisma"
+```
+
+Run all services:
+```bash
 nx run-many --parallel --target=serve --projects=agw,user-data,auth,frontend
 ```
 <a style="padding: 10px; background: black; color: white; border-radius: 25px;" href="https://l.djft.ru/r/72/p/itlabplatform1/a/p/a/">
