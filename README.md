@@ -46,11 +46,27 @@ cd apps/auth/serving && copy database.env.example database.env && sudo docker-co
 ```
 
 ```bash
+cd apps/auth/serving && copy database.env.example database.env && sudo docker-compose up -d && cd ../../../
+```
+
+```bash
+cd apps/user-data/serving && copy database.env.example database.env && sudo docker-compose up -d && cd ../../../
+```
+auth
+```bash
 prisma generate --schema="./libs/prisma-clients/auth/prisma/schema.prisma"
 ```
 
 ```bash
 prisma db push --schema="./libs/prisma-clients/auth/prisma/schema.prisma"
+```
+user data
+
+```bash
+prisma generate --schema="./libs/prisma-clients/user-data/prisma/schema.prisma"
+```
+```bash
+prisma db push --schema="./libs/prisma-clients/user-data/prisma/schema.prisma"
 ```
 
 Run all services:
@@ -128,7 +144,7 @@ Just run `nx build demoapp` to build the application. The build artifacts will b
 # Backend
 ## Prisma Types
 ```bash
-nx generate @nx/plugin:generator prisma-generator --project=prisma-generator
+nx g prisma-generator
 ```
 
 # Frontend

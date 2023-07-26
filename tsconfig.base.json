@@ -17,6 +17,7 @@
     "paths": {
       "@pconfig": ["config/index.ts"],
       "@platform/prisma-clients": ["libs/prisma-clients/index.ts"],
+      "@platform/prisma-clients/*": ["libs/prisma-clients/*"],
       "@platform/prisma-generator": ["libs/prisma-generator/src/index.ts"],
       "@platform/site-layouts": ["libs/site-layouts/src/index.ts"],
       "@platform/site-pages": ["libs/site-pages/src/index.ts"],

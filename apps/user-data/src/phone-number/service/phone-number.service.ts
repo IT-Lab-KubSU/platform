@@ -1,6 +1,9 @@
 import { Inject, Injectable } from "@nestjs/common";
 import { PrismaService } from "../../prisma/service/prisma.service";
-import { PhoneNumber, Prisma } from "@prisma/client";
+import { PhoneNumber, PhoneNumberFindUniqueArgs,
+  PhoneNumberFindFirstArgs, PhoneNumberFindManyArgs, PhoneNumberUpdateArgs,
+  PhoneNumberCountArgs, PhoneNumberCreateArgs, PhoneNumberDeleteArgs
+} from "@platform/prisma-clients/user-data";
 import { PrismaClientKnownRequestError } from "@prisma/client/runtime";
 import { UniqueConstraintFailedError } from "../../prisma/error/unique-constraint-failed.error";
 import { RecordNotFoundError } from "../../prisma/error/record-not-found.error";
@@ -10,19 +13,19 @@ export class PhoneNumberService {
   constructor(@Inject(PrismaService) private prisma: PrismaService) {
   }
 
-  async FindUnique(phoneNumberFindUniqueArgs: Prisma.PhoneNumberFindUniqueArgs): Promise<Partial<PhoneNumber> | null> {
+  async FindUnique(phoneNumberFindUniqueArgs: PhoneNumberFindUniqueArgs): Promise<Partial<PhoneNumber> | null> {
     return await this.prisma.phoneNumber.findUnique(phoneNumberFindUniqueArgs);
   }
 
-  async FindFirst(phoneNumberFindFirstArgs: Prisma.PhoneNumberFindFirstArgs): Promise<Partial<PhoneNumber> | null> {
+  async FindFirst(phoneNumberFindFirstArgs: PhoneNumberFindFirstArgs): Promise<Partial<PhoneNumber> | null> {
     return await this.prisma.phoneNumber.findFirst(phoneNumberFindFirstArgs);
   }
 
-  async FindMany(phoneNumberFindManyArgs: Prisma.PhoneNumberFindManyArgs): Promise<Partial<PhoneNumber>[]> {
+  async FindMany(phoneNumberFindManyArgs: PhoneNumberFindManyArgs): Promise<Partial<PhoneNumber>[]> {
     return await this.prisma.phoneNumber.findMany(phoneNumberFindManyArgs);
   }
 
-  async Update(phoneNumberUpdateArgs: Prisma.PhoneNumberUpdateArgs): Promise<Partial<PhoneNumber>> {
+  async Update(phoneNumberUpdateArgs: PhoneNumberUpdateArgs): Promise<Partial<PhoneNumber>> {
     try {
       return await this.prisma.phoneNumber.update(phoneNumberUpdateArgs);
     } catch (e) {
@@ -34,11 +37,11 @@ export class PhoneNumberService {
     }
   }
 
-  async Count(phoneNumberCountArgs: Prisma.PhoneNumberCountArgs): Promise<number> {
+  async Count(phoneNumberCountArgs: PhoneNumberCountArgs): Promise<number> {
     return await this.prisma.phoneNumber.count(phoneNumberCountArgs);
   }
 
-  async Create(phoneNumberCreateArgs: Prisma.PhoneNumberCreateArgs): Promise<Partial<PhoneNumber>> {
+  async Create(phoneNumberCreateArgs: PhoneNumberCreateArgs): Promise<Partial<PhoneNumber>> {
     try {
       return await this.prisma.phoneNumber.create(phoneNumberCreateArgs);
     } catch (e) {
@@ -49,7 +52,7 @@ export class PhoneNumberService {
     }
   }
 
-  async Delete(phoneNumberDeleteArgs: Prisma.PhoneNumberDeleteArgs): Promise<Partial<PhoneNumber>> {
+  async Delete(phoneNumberDeleteArgs: PhoneNumberDeleteArgs): Promise<Partial<PhoneNumber>> {
     try {
       return await this.prisma.phoneNumber.delete(phoneNumberDeleteArgs);
     } catch (e) {
