@@ -11,18 +11,8 @@ services:
       - user-data-database:/var/lib/postgresql
     env_file:
       - ./database.env
-  user-data-database-admin:
-    container_name: user-data-database-admin
-    image: bitnami/phppgadmin:latest
-    restart: always
-    networks:
-      - user-data
-    depends_on:
-      - user-data-database
-    environment:
-      - DATABASE_HOST=user-data-database
     ports:
-      - "8083:8080"
+      - 5445:5432
 
 networks:
   user-data:
