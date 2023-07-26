@@ -128,7 +128,7 @@ Just run `nx build demoapp` to build the application. The build artifacts will b
 # Backend
 ## Prisma Types
 ```bash
-nx generate @nx/plugin:generator prisma-generator --project=prisma-generator
+nx g prisma-generator
 ```
 
 # Frontend
